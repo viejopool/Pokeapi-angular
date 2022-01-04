@@ -1,0 +1,13 @@
+<nb-layout>
+    <nb-layout-column >
+        <nb-card size="small">
+            <nb-list *ngIf="pokemon$ |async as pokemons">
+              <nb-list-item *ngFor="let pokemon of pokemons" (click)="pokemonSelect(pokemon.name)">
+                <nb-user [name]="pokemon.name" [title]="pokemon.url">
+                </nb-user>
+              </nb-list-item>
+            </nb-list>
+          </nb-card>
+    </nb-layout-column>
+    <nb-layout-column ><app-resultado *ngIf="loading" ></app-resultado></nb-layout-column>
+  </nb-layout>
